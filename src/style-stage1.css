@@ -1,0 +1,232 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Space Grotesk', sans-serif;
+  color: #f4f6ff;
+  background: #03040a;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background: #03040a;
+}
+
+#scene {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+#scene canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  outline: none;
+}
+
+.topbar,
+.hero,
+footer,
+.crosshair {
+  position: fixed;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.topbar {
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 5vw;
+  border-bottom: 1px solid #ffffff12;
+  background: linear-gradient(#03040ad9, transparent);
+}
+
+.brand {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.brand span {
+  color: #8798ff;
+}
+
+.status,
+.eyebrow,
+.controls-hint,
+.telemetry span,
+footer {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.status {
+  color: #a5aec7;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: #8b9dff;
+  box-shadow: 0 0 12px #8b9dff;
+}
+
+.hero {
+  top: 50%;
+  left: 9vw;
+  width: min(430px, 82vw);
+  transform: translateY(-48%);
+}
+
+.eyebrow {
+  color: #a1adff;
+}
+
+h1 {
+  margin: 22px 0;
+  font-size: clamp(46px, 6vw, 78px);
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+}
+
+h1 span {
+  color: #9ba8ff;
+  text-shadow: 0 0 42px #6277ff44;
+}
+
+.description {
+  max-width: 350px;
+  color: #a4abc1;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.controls-hint {
+  margin-top: 32px;
+  color: #c2c8dc;
+}
+
+.controls-hint span {
+  margin: 0 8px;
+  color: #8998ff;
+}
+
+.telemetry {
+  display: flex;
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.telemetry div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.telemetry span {
+  color: #78829f;
+  font-size: 9px;
+}
+
+.telemetry strong {
+  color: #e1e5f7;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.crosshair {
+  top: 50%;
+  left: 73%;
+  color: #ffffff88;
+  font-family: monospace;
+  font-size: 20px;
+  transform: translate(-50%, -50%);
+}
+
+footer {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 22px 5vw;
+  color: #707991;
+  border-top: 1px solid #ffffff12;
+  background: linear-gradient(transparent, #03040ad9);
+  font-size: 9px;
+}
+
+@media (max-width: 700px) {
+  .topbar {
+    padding: 22px 6vw;
+  }
+
+  .status {
+    font-size: 8px;
+  }
+
+  .hero {
+    left: 7vw;
+    top: 46%;
+    width: 86vw;
+  }
+
+  h1 {
+    font-size: clamp(48px, 12vw, 68px);
+  }
+
+  .description {
+    max-width: 300px;
+    font-size: 13px;
+  }
+
+  .telemetry {
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  .telemetry strong {
+    font-size: 9px;
+  }
+
+  .crosshair {
+    left: 85%;
+    top: 35%;
+  }
+
+  footer {
+    gap: 12px;
+    font-size: 8px;
+  }
+}
